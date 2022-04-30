@@ -4,6 +4,7 @@ import indexRoutes from "./routes/index.routes";
 const exphbs = require("express-handlebars");
 import path from "path";
 
+
 //init
 const app = express();
 
@@ -15,9 +16,11 @@ app.engine(
     extname: ".hbs",
     defaultLayout: "main",
     layoutsDir: path.join(app.get("views"), "layouts"),
+    partialsDir: path.join(app.get("views"), "partials")
   })
 );
 app.set("view engine", ".hbs");
+
 
 //Routes
 app.use(indexRoutes);
