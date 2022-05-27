@@ -1,49 +1,32 @@
 import { Router } from "express";
 import vacante from "../models/vacante";
+import item from "../models/newItem";
+const passport = require("passport");
 const router = Router();
 
 router.get("/login", (req, res) => {
-    res.render("login");
-  });
-
-
-router.get("/user/store", (req, res) => {
-  res.render("users/store");
+  res.render("login");
+});
+router.get("/users/signin", (req, res) => {
+  res.render("users/signin");
 });
 
-//registrar productos
+router.post("/users/login", passport.authenticate('local',{
+  successRedirect:'/rh',
+  failureRedirect:'/login',
+  failureFlash: true
+}));
+
 router.get("/user/vacantes", async (req, res) => {
   const vacantes = await vacante.find().lean().sort({ date: "desc" });
   console.log(vacantes);
   res.render("users/bolsaTrabajo", { vacantes: vacantes });
 });
 
-//register and save vacantes
-router.post("/rh/registerVacante/add", async (req, res) => {
-  try {
-    const { experiencia, job, salary, description } = req.body;
-    const addVacante = new vacante({
-      experiencia,
-      job,
-      salary,
-      description,
-    });
-    const vacanteSaved = await addVacante.save();
-    console.log(vacanteSaved);
-    req.flash("success_msg", "Vacante Agregada Con Éxito");
-    res.redirect("/rh/vacantes");
-  } catch (error) {
-    console.log(error);
-  }
+router.get("/user/store", async (req, res) => {
+  const prod = await item.find().lean().sort({ nameItem: "desc" });
+  console.log(prod);
+  res.render("users/store", { prod: prod });
 });
 
-//show vacante
-router.get("/rh/vacantes", async (req, res) => {
-  const vacantes = await vacante.find().lean().sort({ date: "desc" });
-  console.log(vacantes);
-  res.render("RH/vacante", { vacantes: vacantes });
-});
-
-
-  
 export default router;

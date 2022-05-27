@@ -4,11 +4,11 @@
   <div class="container-fluid h-custom">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-9 col-lg-6 col-xl-5">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-          class="img-fluid" alt="Sample image">
+        <img src="/images/LogoORDAZ.png"
+          class="img-fluid rounded-circle" alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form>
+        <form action="/users/login" method="POST">
 
           <div class="divider d-flex align-items-center my-4">
             <p class="text-center fw-bold mx-3 mb-0">Iniciar Sesión</p>
@@ -17,7 +17,7 @@
           <!-- Email input -->
           <div class="form-outline mb-4">
             <input type="text" id="user" name="user" class="form-control form-control-lg"
-              placeholder="Ingresa tu usuario" />
+              placeholder="Ingresa tu usuario" autofocus />
             <label class="form-label colorsito" for="user">Usuario</label>
           </div>
 
@@ -28,18 +28,8 @@
             <label class="form-label colorsito" for="password">Contraseña</label>
           </div>
 
-          <div class="d-flex justify-content-between align-items-center">
-            <!-- Checkbox -->
-            <div class="form-check mb-0">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-              <label class="form-check-label" for="form2Example3">
-                Remember me
-              </label>
-            </div>
-          </div>
-
           <div class="text-center text-lg-start mt-4 pt-2">
-            <button type="button" class="btn btn-primary btn-lg"
+            <button type="submit" class="btn btn-primary btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
           </div>
 

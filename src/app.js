@@ -2,7 +2,7 @@ import express from "express";
 import indexRoutes from "./routes/index.routes";
 import usersRoutes from "./routes/users.routes";
 import rhRoutes from "./routes/rh.routes";
-import almacenRoutes from "./routes/almacen.routes"
+import almacenRoutes from "./routes/almacen.routes";
 //import exphbs from 'express-handlebars'; es el de abajo pero ya no da error el de abajo
 const exphbs = require("express-handlebars");
 import path from "path";
@@ -11,9 +11,12 @@ import exp from "constants";
 const methodOverride = require("method-override");
 const flash = require("connect-flash");
 const session = require("express-session");
+const passport = require("passport");
 
 //init
 const app = express();
+
+require("./config/passport");
 
 //settings
 app.set("views", path.join(__dirname, "views"));
@@ -37,9 +40,11 @@ app.use(
   session({
     secret: "naarsee",
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
   })
 );
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 
 //variable global

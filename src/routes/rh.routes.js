@@ -1,6 +1,7 @@
 import { Router } from "express";
 import employee from "../models/newEmployee";
 import vacante from "../models/vacante";
+import item from "../models/newItem";
 const router = Router();
 
 //RH routes
@@ -9,6 +10,20 @@ router.get("/rh", (req, res) => {
 });
 router.get("/rh/registerEmployee", (req, res) => {
   res.render("RH/registerEmployee");
+});
+
+
+//profile employee
+router.get("/rh/profile/:id", async (req, res) => {
+  const employ = await employee.findById(req.params.id).lean();
+  console.log(employ);
+  res.render("RH/profileRH", { employ });
+});
+
+router.get("/rh/store", async(req, res) => {
+  const prod = await item.find().lean().sort({ nameItem: "desc" });
+  console.log(prod);
+  res.render("RH/storeRH",{prod:prod});
 });
 
 //register and save employees
@@ -171,6 +186,7 @@ router.get("/rh/editVacante/:id", async (req, res) => {
   console.log(vac);
   res.render("RH/editVacante", { vac });
 });
+
 router.put("/rh/edit-vacante/:id", async (req, res) => {
   const { experiencia, description, job, salary } = req.body;
   await vacante.findByIdAndUpdate(req.params.id, {
@@ -182,8 +198,6 @@ router.put("/rh/edit-vacante/:id", async (req, res) => {
   res.redirect("/rh/vacantes");
 });
 
-router.get("/rh/store", (req, res) => {
-  res.render("RH/storeRH");
-});
+
 
 export default router;

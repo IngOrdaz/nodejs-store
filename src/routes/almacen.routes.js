@@ -29,6 +29,13 @@ router.post("/almacen/registerItem/add", async (req, res) => {
   }
 });
 
+
+router.get("/almacen/store", async(req, res) => {
+  const productos = await item.find().lean().sort({ nameItem: "desc" });
+  console.log(productos);
+  res.render("almacen/storeAlmacen",{productos:productos});
+});
+
 //show producto
 router.get("/almacen/items", async (req, res) => {
   const items = await item.find().lean().sort({ nameItem: "desc" });

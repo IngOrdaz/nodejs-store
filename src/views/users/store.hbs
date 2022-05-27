@@ -1,3 +1,8 @@
+<style>
+    #containerPad{
+        padding: 30px 0;
+    }
+</style>
 {{>navbar}}
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
@@ -26,15 +31,19 @@
   </button>
 </div>
 
+
 <!-- empezamos items-->
-<div class="container">
+<div class="container" id="containerPad">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-        <div class="col">
+      {{#each prod}}
+
+        <div class="col md-3">
           <div class="card shadow-sm">
            <img src="/images/charger.jpg" alt="">
             <div class="card-body">
-              <h5 class="card-title" id="textCard">Camaro67</h5>
-              <p class="card-text" id="textCard">$ 355,000</p>
+              <h5 class="card-title" id="textCard">{{itemName}}</h5>
+              <p class="card-text" id="textCard">Precio: $ {{price}}</p>
+              <p class="card-text" id="textCard">Existencia: {{cantidad}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <a href="" class="btn btn-success btn-block"><i class="fas fa-eye"></i></a>
@@ -44,5 +53,14 @@
             </div>
           </div>
         </div>
+        {{else}}
+              <div class="col-md-3">
+                <div class="card mx-auto">
+                    <div class="card-body">
+                        <p class="lead"> Aún No Tenemos Productos {{itemName}}</p>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
     </div>
 </div>
