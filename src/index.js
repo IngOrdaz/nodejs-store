@@ -1,6 +1,7 @@
-import './config';
+import "./config";
 import app from "./app";
-import './database';
+import "./database";
+require("./config/passport");
 
 app.listen(process.env.PORT);
 console.log("Server on port", process.env.PORT);
