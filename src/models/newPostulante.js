@@ -23,8 +23,7 @@ const postulanteSchema = new Schema(
         trim: true,
       },
       cv: {
-        type: File,
-        required: true,
+        type: String,
         trim: true,
       },
         email: {

@@ -1,0 +1,44 @@
+{{>navbarRH}}
+<div style="padding-top: 30px;"></div>
+    <div class="container" id="container_border">
+        <div class="row  justify-content-center align-items-center ">
+            <h1 id="h1_list_employee">Lista de Vacantes</h1>
+            {{#each postulantes}}
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Npombre: {{name}}{{fatherLastName}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Correo: {{email}}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">Teléfono: {{phone}}</h6>
+                           <!-- <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>-->
+                        
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                <form action="/rh/postulante/delete/{{_id}}?_method=DELETE" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger btn-block"><i class="far fa-trash-alt"></i></button>
+                                </form>
+                                <a href="" class="btn btn-success btn-block"><i class="far fa-file-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            {{else}}
+            <div class="col-md-3">
+                <div class="card mx-auto">
+                    <div class="card-body">
+                        <p class="lead"> Aún No Tenemos Vacantes</p>
+                        <a href="/rh/registerVacante" class="btn btn-success btn-block" >Registrar Nueva Vacante</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            <div class="col-md-12 centro">    
+                  <div style="padding-top: 30px;"></div>
+                <a href="/rh/registerVacante" class="btn btn-info btn-block" >Registrar Nueva Vacante</a>
+            </div>
+        </div>
+        
+    </div>    
+</div>
