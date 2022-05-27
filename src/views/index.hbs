@@ -1,1 +1,60 @@
-<h1>Example index</h1>
+<style>
+    div.sec {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    div.sec1 {
+        width: 800px;
+        padding-left: 445px;
+        padding-right: 5px;
+        float: left;
+        border: 2px #17315a;
+    }
+
+    div.gallery {
+        margin: 12px;
+        float: left;
+        width: 45%;
+        border-radius: 20px 20px;
+    }
+
+    div.gallery:hover {
+        border: 2px solid #0081bd;
+        border-radius: 16px 16px;
+    }
+
+    div.gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px 16px;
+    }
+
+    div.desc {
+        padding: 15px;
+        background: #17315a;
+        color: aliceblue;
+        text-align: center;
+        border-radius: 14px 14px;
+    }
+</style>
+  {{>navbar}}
+<div class="container">
+    <!-- codigo apartir de aqui-->
+    <div class="row">
+        <div class="gallery col d-flex justify-content-center">
+            <a href="/user/vacantes">
+                <img src="/images/Bolsa-Trabajo4.jpg" alt="ImagenBolsa">
+                <div class="desc">Bolsa de Trabajo</div>
+            </a>
+
+        </div>
+        <div class="gallery col d-flex justify-content-center">
+            <a href="/user/store">
+                <img src="/images/store.png" alt="ImagenEgresados">
+                <div class="desc">Tienda</div>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+{{>navbar}}
+<div style="padding-top: 30px;"></div>
+    <div class="container" id="container_border">
+        <div class="row  justify-content-center align-items-center ">
+            <h1 id="h1_list_employee">Lista de Vacantes</h1>
+            {{#each vacantes}}
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Puesto: {{job}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Salario: {{salary}}</h6>
+                            <p class="card-text">Descripción: {{description}}</p>
+                           <!-- <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>-->
+                        
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                <a href="" class="btn btn-success btn-block"><i class="far fa-file-alt"> Aplicar </i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{else}}
+                <div class="col-md-3">
+                    <div class="card mx-auto">
+                        <div class="card-body">
+                            <p class="lead"> Aún No Tenemos Vacantes Disponibles</p>
+                        </div>
+                    
+                    </div>
+                    <div style="padding-top: 30px;"></div>
+                </div>
+            {{/each}}
+        </div>
+        
+    </div>    
+</div>

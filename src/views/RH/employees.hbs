@@ -1,0 +1,45 @@
+{{>navbarRH}}
+<div style="padding-top: 30px;"></div>
+    <div class="container" id="container_border">
+        <div class="row  justify-content-center align-items-center ">
+            <h1 id="h1_list_employee">Lista de Empleados</h1>
+            {{#each employees}}
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                {{name}} {{fatherLastName}}
+                            </h4>
+                            <p>
+                                {{job}}
+                            </p>
+                            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                <form action="/rh/employee/delete/{{_id}}?_method=DELETE" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger btn-block"><i class="far fa-trash-alt"></i></button>
+                                </form>
+                                <a class="btn btn-warning btn-block" href="/rh/editEmployee/{{_id}}"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="" class="btn btn-success btn-block"><i class="far fa-file-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            {{else}}
+            <div class="col-md-3">
+                <div class="card mx-auto">
+                    <div class="card-body">
+                        <p class="lead"> Aún No Tenemos Empleados</p>
+                        <a href="/rh/registerEmployee" class="btn btn-success btn-block" >Registrar Nuevo Empleado</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            <div class="col-md-12 centro">    
+                <a href="/rh/registerEmployee" class="btn btn-info btn-block" >Registrar Nuevo Empleado</a>
+            </div>
+        </div>
+        
+    </div>    
+</div>

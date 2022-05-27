@@ -1,0 +1,99 @@
+.centro{
+    margin-bottom: 1.2rem;
+    width: 60%;
+}
+.titulo {
+    margin-bottom: 1.5rem;  
+}
+
+.centro input:focus,
+.centro input:focus { outline: 0; background: #fff; border: 2px solid #ca2e2e; box-shadow: none; }
+
+.centro input::-moz-placeholder,
+.centro input::-moz-placeholder { color: #bbb; font-style: italic; }
+
+.centro input:-ms-input-placeholder,
+.centro input:-ms-input-placeholder { color: #bbb; font-style: italic; }
+
+.centro input::-webkit-input-placeholder,
+.centro input::-webkit-input-placeholder { color: #bbb; font-style: italic; }
+
+body{
+    /*background: #8E0E00;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    background: #00467F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A5CC82, #00467F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A5CC82, #00467F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+   /* background: #ff0084;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #33001b, #ff0084);  /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #33001b, #ff0084); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+#color{
+    color: #fff;
+    text-align: center;
+}
+
+.colorsito{
+    color: #fff;
+    text-align: center;
+}
+
+#h2_rh{
+    margin-top: 15px;
+    border-radius: 25px;
+    background-color: #323333;
+    text-align: center;
+    color: aliceblue;
+    
+}
+main>.container{
+    padding: 30px 0;
+}
+#textCard{
+    text-align: left;
+
+}
+#h1_register_employee{
+    border-radius: 25px;
+    background-color: #1AA179;
+    text-align: center;
+    color: aliceblue;
+    
+}
+#container_border{
+    border-radius: 17px;
+    background-color: #4D8480;
+    padding-bottom: 30px;
+}
+#h1_list_employee{
+    border-radius: 15px;
+    background-color: #1AA179;
+    text-align: center;
+    color: aliceblue;
+    
+}
+
+#h1_register_vacante{
+    border-radius: 15px;
+    background-color: #2C6A80;
+    text-align: center;
+    color: aliceblue;
+}
+
+.espaciado{
+    border-bottom: 30px;
+}
+
+.slide{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.slide img{
+    height: 45vh;
+}

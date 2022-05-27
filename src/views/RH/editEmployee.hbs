@@ -1,0 +1,132 @@
+{{>navbarRH}}
+<div class="container ">
+        <div class="row  justify-content-center align-items-center ">
+            
+                <div class="col-10 col-md-8 col-lg-6 shadow-lg p-3 mb-5 mt-4  rounded" style="background-color: #61947F;"> 
+                    <form action="/rh/edit-employee/{{employ._id}}?_method=PUT" class="mt4 needs-validation" method="POST" novalidate>
+                        <input type="hidden" name="_method" value="PUT">
+                        <h1 id="h1_register_employee">Modificar Datos del Empleado</h1>
+                         <br>
+                        <div class="form-group mx-auto centro"  >
+                            <input id="name" name="name" type="text" class="form-control"  value= "{{employ.name}}" placeholder="Nombre" autofocus required>
+                            <div class="valid-feedback">Datos Asignados</div>
+                            <div class="invalid-feedback">Complete los datos</div>
+                        </div>
+                        
+                        <div class="form-group mx-auto centro">
+                            <input id="fatherLastName" name="fatherLastName" type="text" class="form-control" placeholder="Apellido Paterno" value="{{employ.fatherLastName}}" required>
+                            <div class="valid-feedback">Datos Asignados</div>
+                            <div class="invalid-feedback">Complete los datos</div>
+                        </div>
+                        
+                        <div class="form-group mx-auto centro">
+                            <input id="motherLastName" name="motherLastName" type="text" class="form-control" placeholder="Apellido Materno" value="{{employ.motherLastName}}" required>
+                            <div class="valid-feedback">Datos Asignados</div>
+                            <div class="invalid-feedback">Complete los datos</div>
+                        </div>
+                        
+                        <!--TODO BIRTHDATE-->
+                       
+                        <div class="form-group mx-auto centro">
+                            <input id="curp" name="curp" type="text" class="form-control" placeholder="CURP" value="{{employ.curp}}" required>
+                            <div class="valid-feedback">Datos Asignados</div>
+                            <div class="invalid-feedback">Complete los datos</div>
+                        </div>
+                        
+                        <div class="form-group mx-auto centro">
+                            <input id="rfc" name="rfc" type="text" class="form-control" placeholder="RFC" value="{{employ.rfc}}" required>
+                            <div class="valid-feedback">Datos Asignados</div>
+                            <div class="invalid-feedback">Complete los datos</div>
+                        </div>
+                        
+                        <div class="form-group mx-auto centro">
+                            <input id="email" name="email" type="email" class="form-control" placeholder="Email" value="{{employ.email}}" required>
+                            <div class="valid-feedback">Datos Asignados</div>
+                            <div class="invalid-feedback">Complete los datos</div>
+                        </div>
+                     
+                        <div class="form-group mx-auto centro">
+                            <input id="phone" name="phone" type="text" class="form-control" placeholder="Teléfono" value="{{employ.phone}}" required>
+                            <div class="valid-feedback">Datos Asignados</div>
+                            <div class="invalid-feedback">Complete los datos</div>
+                        </div>
+                        <!-- Start Date -->
+
+                        <div class="form-group mx-auto centro">
+                            <select name="job" id="job" class="form-select" required>
+                                <option selected>{{employ.job}}</option>
+                                <option >Gerente</option>
+                                <option >Encargado de Almacén</option>
+                                <option >Admninistrador RH</option>
+                                <option >Cargador</option>
+                                <option >Vendedor</option>
+                                <option >Conductor</option>
+
+                            </select>
+                            <div class="valid-feedback">Datos Asignados</div>
+                            <div class="invalid-feedback">Complete los datos</div>
+                        </div>
+                        
+                        <div class="form-group mx-auto centro">
+                            <select name="rol" id="rol" class="form-select" required>
+                                <option selected value="">{{employ.rol}}</option>
+                                <option >Gerente</option>
+                                <option >Encargado de Almacén</option>
+                                <option >Admninistrador RH</option>
+                                <option >General</option>
+                            </select>
+                            <div class="valid-feedback">Datos Asignados</div>
+                            <div class="invalid-feedback">Complete los datos</div>
+                        </div>
+                        <div class="form-group mx-auto centro">
+                            <input id="salary" name="salary" type="text" class="form-control" placeholder="Salario Quincenal" value="{{employ.salary}}" required>
+                            <div class="valid-feedback">Datos Asignados</div>
+                            <div class="invalid-feedback">Complete los datos</div>
+                        </div>    
+                        <!-- TODO workinhourstart -->
+                        
+                        <!-- TODO workinhourend -->
+    
+                        <!-- TODO photo -->
+                        
+                        <div class="form-group mx-auto centro">
+                            <input id="user" name="user" type="text" class="form-control" placeholder="Usuario" value="{{employ.user}}" disabled>
+                            <div class="valid-feedback">Datos Asignados</div>
+                            <div class="invalid-feedback">Complete los datos</div>
+                        </div>    
+                    
+                        <button type="submit" class="btn btn-primary">Modificar</button>
+                    </form>
+                </div>
+            
+        </div>    
+    </div>
+    
+    <!-- script para validación de datos-->
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict'
+    
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+    
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+    
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+    </script>
+    	<!-- Javascript -->
+	 
+
+</body>
+</html>

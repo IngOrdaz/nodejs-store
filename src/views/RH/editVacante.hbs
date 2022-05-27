@@ -1,0 +1,75 @@
+{{>navbarRH}}
+<div class="container ">
+        <div class="row  justify-content-center align-items-center ">
+                <div class="col-10 col-md-8 col-lg-6 shadow-lg p-3 mb-5 mt-4  rounded" style="background-color: #588979;"> 
+                    <form action="/rh/edit-vacante/{{vac._id}}?_method=PUT" class="mt4 needs-validation" method="POST" novalidate>
+                        <input type="hidden" name="_method" value="PUT">
+                        <h1 id="h1_register_vacante">Registro de Vacante</h1>
+                         <br>
+
+                        <div class="form-group mx-auto centro">
+                            <select name="job" id="job" class="form-select" required>
+                                <option selected  value= "">{{vac.job}}</option>
+                                <option >Gerente</option>
+                                <option >Encargado de Almacén</option>
+                                <option >Admninistrador RH</option>
+                                <option >Cargador</option>
+                                <option >Vendedor</option>
+                                <option >Conductor</option>
+                            </select>
+                            <div class="valid-feedback">Datos Asignados</div>
+                            <div class="invalid-feedback">Complete los datos</div>
+                        </div>
+                        <div class="form-group mx-auto centro">
+                            <input  value= "{{vac.experiencia}}" id="experiencia" name="experiencia" type="text" class="form-control" placeholder="Experiencia: 1 año" required>
+                            <div class="valid-feedback">Datos Asignados</div>
+                            <div class="invalid-feedback">Complete los datos</div>
+                        </div>
+
+                        <div class="form-group mx-auto centro">
+                            <input value= "{{vac.salary}}" id="salary" name="salary" type="text" class="form-control" placeholder="Salario Quincenal" required>
+                            <div class="valid-feedback">Datos Asignados</div>
+                            <div class="invalid-feedback">Complete los datos</div>
+                        </div>    
+                        
+                        <div class="form-group mx-auto centro">
+                          <textarea class="form-control" placeholder="Descripción del puesto" id="description" name="description" style="height: 100px" required>{{vac.description}}</textarea>
+                          <div class="valid-feedback">Datos Asignados</div>
+                          <div class="invalid-feedback">Complete los datos</div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Modificar</button>
+                    </form>
+                </div>
+            
+        </div>    
+    </div>
+    
+    <!-- script para validación de datos-->
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict'
+    
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+    
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+    
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+    </script>
+    	<!-- Javascript -->
+	 
+
+</body>
+</html>
