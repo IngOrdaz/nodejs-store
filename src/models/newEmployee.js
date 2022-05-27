@@ -40,7 +40,7 @@ const employeeSchema = new Schema(
       unique: true,
     },
     phone: {
-      type: String,
+      type: Number,
       require: true,
       trim: true,
     },
@@ -53,12 +53,8 @@ const employeeSchema = new Schema(
       trim: true,
     },
     salary: {
-      type: String,
+      type: Number,
       require: true,
-      trim: true,
-    },
-    netSalary: {
-      type: String,
       trim: true,
     },
     workingHoursStart: {

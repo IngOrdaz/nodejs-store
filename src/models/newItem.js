@@ -1,31 +1,27 @@
 import { Schema, model } from "mongoose";
-import Strategy from "passport-local/lib";
 
-const vacanteSchema = new Schema(
+const itemsSchema = new Schema(
   {
-    job: {
+    itemName: {
       type: String,
       required: true,
       trim: true,
     },
-    experiencia: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    salary: {
+    cantidad: {
       type: Number,
       required: true,
       trim: true,
     },
-    description: {
-      type: String,
+    price: {
+      type: Number,
       required: true,
       trim: true,
     },
-    days: {
-      type: Date
-    },
+    code: {
+      type: String,
+      required: true,
+      trim: true,
+    }
   },
   {
     //permite agregar created at y updated at
@@ -34,4 +30,4 @@ const vacanteSchema = new Schema(
   }
 );
 
-export default model("Vacantes", vacanteSchema);
+export default model("Items", itemsSchema);
