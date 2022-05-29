@@ -16,7 +16,7 @@ const passport = require("passport");
 //init
 const app = express();
 
-require("./config/passport");//login
+require("./config/passport"); //login
 
 //settings
 app.set("views", path.join(__dirname, "views"));
@@ -63,4 +63,10 @@ app.use(almacenRoutes);
 
 //Static Files
 app.use(express.static(path.join(__dirname, "public")));
+
+//middleware 404
+//404 error
+app.use((req, res, next) => {
+  res.status(404).render("404");
+});
 export default app;
