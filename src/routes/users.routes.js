@@ -3,8 +3,12 @@ import vacante from "../models/vacante";
 import item from "../models/newItem";
 import postulante from '../models/newPostulante'
 const passport = require("passport");
-const router = Router();
+const router = Router();+
 
+
+router.get("/404", (req, res) => {
+  res.render("404");
+});
 router.get("/login", (req, res) => {
   res.render("login");
 });
