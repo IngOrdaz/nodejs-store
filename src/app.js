@@ -16,7 +16,7 @@ const passport = require("passport");
 //init
 const app = express();
 
-require("./config/passport");
+require("./config/passport");//login
 
 //settings
 app.set("views", path.join(__dirname, "views"));
@@ -38,19 +38,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(
   session({
-    secret: "naarsee",
+    secret: "secret",
     resave: true,
     saveUninitialized: true,
   })
 );
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.initialize()); //login
+app.use(passport.session()); //login
 app.use(flash());
 
 //variable global
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash("success_msg");
-  res.locals.error_msg = req.flash("error_ms g");
+  res.locals.error_msg = req.flash("error_msg");
+  res.locals.error = req.flash("error");
   next();
 });
 

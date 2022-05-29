@@ -83,6 +83,7 @@ const employeeSchema = new Schema(
     //permite agregar created at y updated at
     timestamps: true,
     versionKey: false,
+    //collection: 'userInfo'
   }
 );
 
