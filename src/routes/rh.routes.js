@@ -8,6 +8,7 @@ const router = Router();
 router.get("/rh", (req, res) => {
   res.render("RH/indexRH");
 });
+
 router.get("/rh/registerEmployee", (req, res) => {
   res.render("RH/registerEmployee");
 });
