@@ -20,6 +20,7 @@
   },
   "homepage": "https://gitlab.com/narseg.f/semestraltopicos#readme",
   "dependencies": {
+    "@babel/runtime": "^7.18.3",
     "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
